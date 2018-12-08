@@ -1,0 +1,6 @@
+hash: 3633713a0ce545377da34b56683b7cf14107be717e3fc67a43b9b1d8a5fc499d
+updated: 2018-12-07T20:43:14.6305257-02:00
+imports:
+- name: github.com/olivere/elastic
+  version: 1619150b007041b6dba8aa447f0e2d151cc2b4c5
+testImports: []

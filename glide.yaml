@@ -1,4 +1,0 @@
-package: etl-txt
-import:
-- package: github.com/olivere/elastic
-  version: ^6.2.14

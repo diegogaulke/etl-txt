@@ -1,10 +1,9 @@
 # Golang TXT ETL example
 
-This is an example on how to read a text file and extract information and send it to an processor.<br>
+This is an example on how to extract information from a text file, transform it and load it into some datasource.<br>
 Information is extracted line by line using regex expression for each type of file defined by env vars (see below).<br>
-There are two implemented entities, debt and client. You can implement your own adding new extractors and processors that supports your file.<br>
-The default processor method is to print extracted information.<br>
-You can send extracted data to elastic search, just set the below how to configure needed env variables below.
+There are two implemented entities, debt and client. You can implement your own adding new extractors, transformers and loaders  that supports your file.<br>
+The default loader method is to print extracted and transformed information.<br>
 
 ## Build
 dep ensure<br>

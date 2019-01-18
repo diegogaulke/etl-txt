@@ -1,4 +1,4 @@
-package transform
+package transformer
 
 import (
 	"etl-txt/etl"
@@ -11,5 +11,6 @@ type TClient struct {
 
 // Transform do the data manipulation
 func (t *TClient) Transform(op *etl.Operation) error {
+	// transform Data here as you wish
 	return nil
 }

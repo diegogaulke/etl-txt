@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"etl-txt/extractor"
 	"etl-txt/loader"
-	"etl-txt/transform"
+	"etl-txt/transformer"
 	"fmt"
 	"log"
 	"os"
@@ -17,7 +17,7 @@ func main() {
 	fileType := os.Getenv("FILE_TYPE")
 
 	e := extractor.NewExtractor(fileType)
-	t := transform.New(fileType)
+	t := transformer.New(fileType)
 	p := loader.New(fileType)
 
 	if e == nil || t == nil || p == nil {

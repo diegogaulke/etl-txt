@@ -2,6 +2,8 @@ package es
 
 import (
 	"context"
+	"errors"
+	"os"
 
 	"github.com/olivere/elastic"
 	uuid "github.com/satori/go.uuid"
@@ -11,7 +13,12 @@ import (
 func Add(index string, data interface{}) error {
 	ctx := context.Background()
 
-	client, err := elastic.NewClient(elastic.SetURL("https://elastic:3umksqI0sSUWGFYpnMz3gvb4@27f4df016cb74b68990e96f17a0980b4.sa-east-1.aws.found.io:9243"), elastic.SetSniff(false))
+	url := os.Getenv("ELASTIC_URL")
+	if url == "" {
+		return errors.New("please set your elastic search url")
+	}
+
+	client, err := elastic.NewClient(elastic.SetURL(url), elastic.SetSniff(false))
 	if err != nil {
 		return err
 	}

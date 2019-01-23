@@ -36,10 +36,18 @@ func main() {
 		line := scanner.Text()
 		op, err := e.Extract(line)
 		if err != nil {
-			fmt.Println("Error processing line: ", line)
+			fmt.Println("Error while extracting line: ", line)
 		} else {
 			err = t.Transform(op)
+			if err != nil {
+				fmt.Println("Error while transforming line: ", line)
+				continue
+			}
 			err = p.Load(op)
+			if err != nil {
+				fmt.Println("Error while loading line: ", line)
+				continue
+			}
 		}
 	}
 
